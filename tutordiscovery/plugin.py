@@ -18,7 +18,7 @@ config = {
         "VERSION": __version__,
         "DOCKER_IMAGE": "{{ DOCKER_REGISTRY}}overhangio/openedx-discovery:{{ DISCOVERY_VERSION }}",
         "HOST": "discovery.{{ LMS_HOST }}",
-        "INDEX_OVERRIDES": {},
+        "INDEX_NAME": "catalog",
         "MYSQL_DATABASE": "discovery",
         "MYSQL_USERNAME": "discovery",
         "OAUTH2_KEY": "discovery",
