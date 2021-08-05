@@ -20,13 +20,12 @@ DATABASES = {
     }
 }
 
-ELASTICSEARCH_DSL['default'].update({
-    'hosts': "http://{{ ELASTICSEARCH_HOST }}:{{ ELASTICSEARCH_PORT }}/"
-})
-
-{% for name, index in DISCOVERY_INDEX_OVERRIDES.items() %}
-ELASTICSEARCH_INDEX_NAMES["{{ name }}"] = "{{ index }}"
-{% endfor %}
+HAYSTACK_CONNECTIONS["default"].update(
+    {
+        "URL": "http://{{ ELASTICSEARCH_HOST }}:{{ ELASTICSEARCH_PORT }}",
+        "INDEX_NAME": "{{ DISCOVERY_INDEX_NAME }}",
+    }
+)
 
 CACHES = {
     "default": {
