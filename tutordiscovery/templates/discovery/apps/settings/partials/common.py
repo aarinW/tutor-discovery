@@ -91,4 +91,3 @@ EDX_DRF_EXTENSIONS = {
 }
 
 {{ patch("discovery-common-settings") }}
-
